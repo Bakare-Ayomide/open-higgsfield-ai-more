@@ -1,6 +1,7 @@
 {
   "name": "studio",
   "version": "1.0.0",
+  "type": "module",
   "description": "Open Higgsfield AI studio components for Muapi",
   "main": "src/index.js",
   "module": "src/index.js",

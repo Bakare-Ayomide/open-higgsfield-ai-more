@@ -1,14 +1,19 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { ImageStudio, VideoStudio, LipSyncStudio, CinemaStudio } from 'studio';
+import ImageStudio from '@/packages/studio/src/components/ImageStudio.jsx';
+import VideoStudio from '@/packages/studio/src/components/VideoStudio.jsx';
+import LipSyncStudio from '@/packages/studio/src/components/LipSyncStudio.jsx';
+import CinemaStudio from '@/packages/studio/src/components/CinemaStudio.jsx';
+import CharacterSheetStudio from '@/packages/studio/src/components/CharacterSheetStudio.jsx';
 import ApiKeyModal from './ApiKeyModal';
 
 const TABS = [
-  { id: 'image',   label: 'Image Studio' },
-  { id: 'video',   label: 'Video Studio' },
-  { id: 'lipsync', label: 'Lip Sync' },
-  { id: 'cinema',  label: 'Cinema Studio' },
+  { id: 'image',     label: 'Image Studio' },
+  { id: 'video',     label: 'Video Studio' },
+  { id: 'lipsync',   label: 'Lip Sync' },
+  { id: 'cinema',    label: 'Cinema Studio' },
+  { id: 'character', label: 'Character Sheet' },
 ];
 
 const STORAGE_KEY = 'muapi_key';
@@ -78,7 +83,8 @@ export default function StandaloneShell() {
         {activeTab === 'image'   && <ImageStudio   apiKey={apiKey} />}
         {activeTab === 'video'   && <VideoStudio   apiKey={apiKey} />}
         {activeTab === 'lipsync' && <LipSyncStudio apiKey={apiKey} />}
-        {activeTab === 'cinema'  && <CinemaStudio  apiKey={apiKey} />}
+        {activeTab === 'cinema'    && <CinemaStudio         apiKey={apiKey} />}
+        {activeTab === 'character' && <CharacterSheetStudio apiKey={apiKey} />}
       </div>
 
       {/* Settings Modal */}
